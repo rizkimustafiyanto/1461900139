@@ -30,28 +30,16 @@
             <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Siswa</th>
-                <th>NIS</th>
-                <th>Kelamin</th>
-                <th>Alamat</th>
-                <th>No Telfon</th>
-                <th>Username</th>
-                <th>Password</th>
+                <th>Nama Pelajaran</th>
                 <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $no=1; ?>
-                @foreach ($data_siswa as $ds)
+                @foreach ($setup_pelajaran as $sp)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$ds->nama_siswa}}</td>
-                <td>{{$ds->nis}}</td>
-                <td>{{$ds->kelamin}}</td>
-                <td>{{$ds->alamat_siswa}}</td>
-                <td>{{$ds->telpon_siswa}}</td>
-                <td>{{$ds->username}}</td>
-                <td>{{$ds->password}}</td>
+                <td>{{$sp->nama_pelajaran}}</td>
                 <td>
                     <a href="">Edit </a>
                     <a href=""> Hapus</a>

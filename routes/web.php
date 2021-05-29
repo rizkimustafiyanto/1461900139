@@ -26,7 +26,7 @@ use App\Http\Controllers\user_adminController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome0139');
 });
 
 Route::resource('dataguru', data_guruController::class);

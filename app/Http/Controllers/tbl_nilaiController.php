@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class tbl_nilaiController extends Controller
 {
@@ -13,7 +14,16 @@ class tbl_nilaiController extends Controller
      */
     public function index()
     {
-        //
+        //Mengambil data dari table tbl_nilai
+        $tbl_nilai = DB::table('tbl_nilai')
+        ->leftjoin('data_siswa', 'tbl_nilai.id_siswa', '=', 'data_siswa.id_siswa')
+        ->leftjoin('data_guru', 'tbl_nilai.id_guru', '=', 'data_guru.id_guru')
+        ->leftjoin('setup_pelajaran', 'tbl_nilai.id_pelajaran', '=', 'setup_pelajaran.id_pelajaran')
+        ->leftjoin('setup_kelas', 'tbl_nilai.id_kelas', '=', 'setup_kelas.id_kelas')
+        ->orderBy('nama_siswa', 'asc')
+        ->get();
+        //Mengirim data ke view tblnilai
+        return view('tblnilai' , ['tbl_nilai' => $tbl_nilai]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <head>
     <meta name="viewport" content="width=device-width,
     initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Data Peserta</title>
     <style>
     table {
         border-collapse: collapse;
@@ -42,7 +42,7 @@
             </thead>
             <tbody>
             <?php $no=1; ?>
-                @foreach ($data_guru as $dg)
+                @foreach ($tb_peserta as $dg)
             <tr>
                 <td>{{$no++}}</td>
                 <td>{{$dg->nama_guru}}</td>

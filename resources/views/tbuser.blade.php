@@ -1,7 +1,7 @@
 <head>
     <meta name="viewport" content="width=device-width,
     initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Data User</title>
     <style>
     table {
         border-collapse: collapse;
@@ -30,28 +30,28 @@
             <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Guru</th>
-                <th>NIP</th>
-                <th>Kelamin</th>
-                <th>Alamat</th>
-                <th>No Telfon</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Nama</th>
+                <th>Level</th>
+                <th>Blokir</th>
+                <th>Create</th>
+                <th>Update</th>
                 <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $no=1; ?>
-                @foreach ($data_guru as $dg)
+                @foreach ($tb_user as $tu)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$dg->nama_guru}}</td>
-                <td>{{$dg->nip}}</td>
-                <td>{{$dg->kelamin}}</td>
-                <td>{{$dg->alamat_guru}}</td>
-                <td>{{$dg->telpon_guru}}</td>
-                <td>{{$dg->username}}</td>
-                <td>{{$dg->password}}</td>
+                <td>{{$tu->username}}</td>
+                <td>{{$tu->password}}</td>
+                <td>{{$tu->nama}}</td>
+                <td>{{$tu->level}}</td>
+                <td>{{$tu->is_blokir}}</td>
+                <td>{{$tu->created_at}}</td>
+                <td>{{$tu->updated_at}}</td>
                 <td>
                     <a href="">Edit </a>
                     <a href=""> Hapus</a>

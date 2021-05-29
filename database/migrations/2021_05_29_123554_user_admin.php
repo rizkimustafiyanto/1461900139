@@ -14,12 +14,8 @@ class UserAdmin extends Migration
     public function up()
     {
         Schema::create('user_admin', function (Blueprint $table) {
-            $table->increments('id_siswa', 5);
-            $table->string('nama_siswa', 20);
-            $table->string('nis', 12);
-            $table->enum('kelamin', ['Laki-laki', 'Perempuan']);
-            $table->longText('alamat_siswa');
-            $table->string('telpon_siswa', 12);
+            $table->increments('id_admin', 3);
+            $table->string('nama_admin', 20);
             $table->string('username', 20);
             $table->string('password', 100);
             $table->timestamps();

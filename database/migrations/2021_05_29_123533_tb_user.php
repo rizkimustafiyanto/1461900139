@@ -14,14 +14,14 @@ class TbUser extends Migration
     public function up()
     {
         Schema::create('tb_user', function (Blueprint $table) {
-            $table->increments('id_siswa', 5);
-            $table->string('nama_siswa', 20);
-            $table->string('nis', 12);
-            $table->enum('kelamin', ['Laki-laki', 'Perempuan']);
-            $table->longText('alamat_siswa');
-            $table->string('telpon_siswa', 12);
-            $table->string('username', 20);
-            $table->string('password', 100);
+            $table->tinyIncrements('id_siswa', 2);
+            $table->string('username', 32);
+            $table->char('password', 32);
+            $table->string('nama', 32);
+            $table->enum('level', ['operator', 'administrator']);
+            $table->enum('is_blokir', ['0', '1']);
+            $table->dateTime('created_at', $precision = 0);
+            $table->dateTime('updated_at', $precision = 0);
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class tbl_jadwalController extends Controller
 {
@@ -13,7 +14,14 @@ class tbl_jadwalController extends Controller
      */
     public function index()
     {
-        //
+        //Mengambil data dari table tbl_jadwal
+        $tbl_jadwal = DB::table('tbl_jadwal')
+        ->leftjoin('data_guru', 'tbl_jadwal.id_guru', '=', 'data_guru.id_guru')
+        ->leftjoin('setup_pelajaran', 'tbl_jadwal.id_pelajaran', '=', 'setup_pelajaran.id_pelajaran')
+        ->leftjoin('setup_kelas', 'tbl_jadwal.id_kelas', '=', 'setup_kelas.id_kelas')
+        ->get();
+        //Mengirim data ke view datasiswa
+        return view('tbljadwal' , ['tbl_jadwal' => $tbl_jadwal]);
     }
 
     /**

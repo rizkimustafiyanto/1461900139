@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class tb_pesertaController extends Controller
 {
@@ -13,7 +14,10 @@ class tb_pesertaController extends Controller
      */
     public function index()
     {
-        //
+        //Mengambil data dari table tb_peserta
+        $tb_peserta = DB::table('tb_peserta')->get();
+        //Mengirim data ke view tbpeserta
+        return view('tbpeserta' , ['tb_peserta' => $tb_peserta]);
     }
 
     /**

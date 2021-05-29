@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class tb_userController extends Controller
 {
@@ -13,7 +14,10 @@ class tb_userController extends Controller
      */
     public function index()
     {
-        //
+        //Mengambil data dari table tb_user
+        $tb_user = DB::table('tb_user')->get();
+        //Mengirim data ke view tbuser
+        return view('tbuser' , ['tb_user' => $tb_user]);
     }
 
     /**

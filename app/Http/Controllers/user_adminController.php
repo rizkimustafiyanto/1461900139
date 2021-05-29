@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class user_adminController extends Controller
 {
@@ -13,7 +14,10 @@ class user_adminController extends Controller
      */
     public function index()
     {
-        //
+        //Mengambil data dari table user_admin
+        $user_admin = DB::table('user_admin')->get();
+        //Mengirim data ke view useradmin
+        return view('useradmin' , ['user_admin' => $user_admin]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <head>
     <meta name="viewport" content="width=device-width,
     initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Kontak</title>
     <style>
     table {
         border-collapse: collapse;
@@ -30,28 +30,28 @@
             <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Guru</th>
-                <th>NIP</th>
-                <th>Kelamin</th>
-                <th>Alamat</th>
-                <th>No Telfon</th>
-                <th>Username</th>
-                <th>Password</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Judul</th>
+                <th>Isi</th>
+                <th>is dibalas</th>
+                <th>Create</th>
+                <th>Update</th>
                 <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $no=1; ?>
-                @foreach ($data_guru as $dg)
+                @foreach ($tb_kontak as $kntk)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$dg->nama_guru}}</td>
-                <td>{{$dg->nip}}</td>
-                <td>{{$dg->kelamin}}</td>
-                <td>{{$dg->alamat_guru}}</td>
-                <td>{{$dg->telpon_guru}}</td>
-                <td>{{$dg->username}}</td>
-                <td>{{$dg->password}}</td>
+                <td>{{$kntk->nama}}</td>
+                <td>{{$kntk->email}}</td>
+                <td>{{$kntk->judul}}</td>
+                <td>{{$kntk->isi}}</td>
+                <td>{{$kntk->is_dibalas}}</td>
+                <td>{{$kntk->created_at}}</td>
+                <td>{{$kntk->updated_at}}</td>
                 <td>
                     <a href="">Edit </a>
                     <a href=""> Hapus</a>

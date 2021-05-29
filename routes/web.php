@@ -31,13 +31,13 @@ Route::get('/', function () {
 
 Route::resource('dataguru', data_guruController::class);
 Route::resource('datasiswa', data_siswaController::class);
-Route::resource('dataguru', setup_kelasController::class);
-Route::resource('datasiswa', setup_pelajaranController::class);
-Route::resource('dataguru', tbl_jadwalController::class);
-Route::resource('datasiswa', tbl_nilaiController::class);
-Route::resource('dataguru', tbl_ruanganController::class);
-Route::resource('datasiswa', tb_kontakController::class);
-Route::resource('dataguru', tb_pengumumanController::class);
-Route::resource('datasiswa', tb_pesertaController::class);
-Route::resource('dataguru', tb_userController::class);
-Route::resource('datasiswa', user_adminController::class);
+Route::resource('setupkelas', setup_kelasController::class);
+Route::resource('setuppelajaran', setup_pelajaranController::class);
+Route::resource('tbljadwal', tbl_jadwalController::class);
+Route::resource('tblnilai', tbl_nilaiController::class);
+Route::resource('tblruangan', tbl_ruanganController::class);
+Route::resource('tbkontak', tb_kontakController::class);
+Route::resource('tbpengumuman', tb_pengumumanController::class);
+Route::resource('tbpeserta', tb_pesertaController::class);
+Route::resource('tbuser', tb_userController::class);
+Route::resource('useradmin', user_adminController::class);

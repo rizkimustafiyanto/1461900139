@@ -1,7 +1,7 @@
 <head>
     <meta name="viewport" content="width=device-width,
     initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Data Ruangan</title>
     <style>
     table {
         border-collapse: collapse;
@@ -31,27 +31,17 @@
             <tr>
                 <th>No</th>
                 <th>Nama Siswa</th>
-                <th>NIS</th>
-                <th>Kelamin</th>
-                <th>Alamat</th>
-                <th>No Telfon</th>
-                <th>Username</th>
-                <th>Password</th>
+                <th>Kelas</th>
                 <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $no=1; ?>
-                @foreach ($data_siswa as $ds)
+                @foreach ($tbl_ruangan as $tbr)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$ds->nama_siswa}}</td>
-                <td>{{$ds->nis}}</td>
-                <td>{{$ds->kelamin}}</td>
-                <td>{{$ds->alamat_siswa}}</td>
-                <td>{{$ds->telpon_siswa}}</td>
-                <td>{{$ds->username}}</td>
-                <td>{{$ds->password}}</td>
+                <td>{{$tbr->nama_siswa}}</td>
+                <td>{{$tbr->nama_kelas}}</td>
                 <td>
                     <a href="">Edit </a>
                     <a href=""> Hapus</a>
